@@ -47,7 +47,8 @@ fn main() {
     let args: Vec<String> = env::args().skip(1).collect();
 
     if args.len() != 1 || args.first().is_none() {
-        eprintln!("Usage: geolocator <ip> (or use `local` to get your local IP info)");
+        eprintln!("Usage:   geolocator <ip>   (geolocate any IP address you choose)");
+        eprintln!("         geolocator local  (geolocate the IP address of the machine the program is run on)");
         process::exit(1);
     }
 
