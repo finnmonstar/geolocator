@@ -3,45 +3,8 @@
 use {
     serde::{Deserialize, Serialize},
     std::{env, process},
+    geolocator::{VERSION, Information},
 };
-
-const VERSION: &'static str = env!("CARGO_PKG_VERSION");
-
-#[derive(Debug, Serialize, Deserialize)]
-struct Information {
-    status: String,
-    message: Option<String>,
-    continent: Option<String>,
-    #[serde(rename = "continentCode")]
-    continent_code: Option<String>,
-    country: Option<String>,
-    #[serde(rename = "countryCode")]
-    country_code: Option<String>,
-    region: Option<String>,
-    #[serde(rename = "regionName")]
-    region_name: Option<String>,
-    city: Option<String>,
-    district: Option<String>,
-    #[serde(rename = "zip")]
-    zip_code: Option<String>,
-    #[serde(rename = "lat")]
-    latitude: Option<f64>,
-    #[serde(rename = "lon")]
-    longitude: Option<f64>,
-    timezone: Option<String>,
-    offset: Option<isize>,
-    currency: Option<String>,
-    isp: Option<String>,
-    #[serde(rename = "org")]
-    organization: Option<String>,
-    r#as: Option<String>,
-    asname: Option<String>,
-    reverse: Option<String>,
-    mobile: Option<bool>,
-    proxy: Option<bool>,
-    hosting: Option<bool>,
-    query: Option<String>,
-}
 
 fn main() {
     let args: Vec<String> = env::args().skip(1).collect();
