@@ -1,7 +1,6 @@
 #![deny(warnings, unsafe_code, clippy::all)]
 
 use {
-    serde::{Deserialize, Serialize},
     std::{env, process},
     geolocator::{VERSION, Information},
 };
